@@ -118,7 +118,7 @@ class Clock():
         self.__setAlarmScreen=False#Set variable to indicate we have changed screens
         self.__setTimerScreen=False#Set variable to indicate we have changed screens
 
-        self.__updateDisplay(datetime.datetime.now().strftime("%B %d-%m-%y"))
+        self.__updateDisplay(datetime.datetime.now().strftime("%d-%B-%y"))
 
     def __displayTime(self):
         '''
