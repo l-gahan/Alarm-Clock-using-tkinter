@@ -20,4 +20,4 @@ To use the timer:
   Set the timer to this time by pressing the Set Timer button again and a confirmation message will be displayed.
   Run the timer by pressing Start Timer.
   Reset the timer by pressing reset Timer.
-  Stop and start the timer using Pause Timer and Start Timer respectively.
+  Pause the timer using Pause/Resume Timer button and press the button again and then the Start Timer button to resume the timer.
