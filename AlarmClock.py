@@ -34,67 +34,67 @@ class Clock():
         #Create buttons on the window to control the alarm clock
         #Button to display the date
         self.showDate=tkinter.Button(self.clockWindow,text="Display Date", font=("Calabri", 15),command=self.displayDate)
-        self.showDate.grid(row=2,column=1,columnspan=6)
+        self.showDate.grid(row=2,column=1,columnspan=6,sticky="nsew")
         #Button to display the time
         self.showTime=tkinter.Button(self.clockWindow,text="Display Time", font=("Calabri", 15),command=self.displayTime)
-        self.showTime.grid(row=3,column=4)
+        self.showTime.grid(row=3,column=4,sticky="nsew")
         #Button to change the time from 24hr time to 12hr time
         self.setAmPm=tkinter.Button(self.clockWindow,text="Set AM/PM", font=("Calabri", 15),command=self.setTimeType)
-        self.setAmPm.grid(row=3,column=5)
+        self.setAmPm.grid(row=3,column=5,sticky="nsew")
         #Button to go to the screen to set an alarm (also used to set the alarm on the alarm screen)
         self.setAlarmClock=tkinter.Button(self.clockWindow,text="Set Alarm", font=("Calabri", 15),command=self.setAlarm)
-        self.setAlarmClock.grid(row=4,column=4)
+        self.setAlarmClock.grid(row=4,column=4,sticky="nsew")
         #Button to allow user to input 0
         self.setZero=tkinter.Button(self.clockWindow,text="0", font=("Calabri", 15),command=self.inputZero)
-        self.setZero.grid(row=6,column=2)
+        self.setZero.grid(row=6,column=2,sticky="nsew")
         #Button to allow user to input 1
         self.setOne=tkinter.Button(self.clockWindow,text="1", font=("Calabri", 15),command=self.inputOne)
-        self.setOne.grid(row=3,column=1)
+        self.setOne.grid(row=3,column=1,sticky="nsew")
         #Button to allow user to input 2
         self.setTwo=tkinter.Button(self.clockWindow,text="2", font=("Calabri", 15),command=self.inputTwo)
-        self.setTwo.grid(row=3,column=2)
+        self.setTwo.grid(row=3,column=2,sticky="nsew")
         #Button to allow user to input 3
         self.setThree=tkinter.Button(self.clockWindow,text="3", font=("Calabri", 15),command=self.inputThree)
-        self.setThree.grid(row=3,column=3)
+        self.setThree.grid(row=3,column=3,sticky="nsew")
         #Button to allow user to input 4
         self.setFour=tkinter.Button(self.clockWindow,text="4", font=("Calabri", 15),command=self.inputFour)
-        self.setFour.grid(row=4,column=1)
+        self.setFour.grid(row=4,column=1,sticky="nsew")
         #Button to allow user to input 5
         self.setFive=tkinter.Button(self.clockWindow,text="5", font=("Calabri", 15),command=self.inputFive)
-        self.setFive.grid(row=4,column=2)
+        self.setFive.grid(row=4,column=2,sticky="nsew")
         #Button to allow user to input 6
         self.setSix=tkinter.Button(self.clockWindow,text="6", font=("Calabri", 15),command=self.inputSix)
-        self.setSix.grid(row=4,column=3)
+        self.setSix.grid(row=4,column=3,sticky="nsew")
         #Button to allow user to input 7
         self.setSeven=tkinter.Button(self.clockWindow,text="7", font=("Calabri", 15),command=self.inputSeven)
-        self.setSeven.grid(row=5,column=1)
+        self.setSeven.grid(row=5,column=1,sticky="nsew")
         #Button to allow user to input 8
         self.setEight=tkinter.Button(self.clockWindow,text="8", font=("Calabri", 15),command=self.inputEight)
-        self.setEight.grid(row=5,column=2)
+        self.setEight.grid(row=5,column=2,sticky="nsew")
         #Button to allow user to input 9
         self.setNine=tkinter.Button(self.clockWindow,text="9", font=("Calabri", 15),command=self.inputNine)
-        self.setNine.grid(row=5,column=3)
+        self.setNine.grid(row=5,column=3,sticky="nsew")
         #Allows user to cancel alarm
         self.Reset=tkinter.Button(self.clockWindow,text="Reset Alarm", font=("Calabri", 15),command=self.resetAlarm)
-        self.Reset.grid(row=4,column=5)
+        self.Reset.grid(row=4,column=5,sticky="nsew")
         #When clicked shows the time the alarm is set for in 24hr time
         self.showAlarmTime=tkinter.Button(self.clockWindow,text="Show Alarm", font=("Calabri", 15),command=self.showAlarm)
-        self.showAlarmTime.grid(row=4,column=6)
+        self.showAlarmTime.grid(row=4,column=6,sticky="nsew")
         #Allows user to snooze alarm for 25 minutes
         self.setTimer=tkinter.Button(self.clockWindow,text="Snooze", font=("Calabri", 15),command=self.snooze)
-        self.setTimer.grid(row=3,column=6)
+        self.setTimer.grid(row=3,column=6,sticky="nsew")
         #Allows user to set the timer
         self.setTimer=tkinter.Button(self.clockWindow,text="Set Timer", font=("Calabri", 15),command=self.timerSet)
-        self.setTimer.grid(row=5,column=4)
+        self.setTimer.grid(row=5,column=4,sticky="nsew")
         #Allows user to pause the timer
         self.pauseTimer=tkinter.Button(self.clockWindow,text="Pause timer", font=("Calabri", 15),command=self.timerPause)
-        self.pauseTimer.grid(row=5,column=5)
+        self.pauseTimer.grid(row=5,column=5,sticky="nsew")
         #Allows user to reset the timer
         self.resetTimer=tkinter.Button(self.clockWindow,text="Reset Timer", font=("Calabri", 15),command=self.timerReset)
-        self.resetTimer.grid(row=5,column=6)
+        self.resetTimer.grid(row=5,column=6,sticky="nsew")
         #Allows user to start the timer
         self.runTimer=tkinter.Button(self.clockWindow,text="Start Timer", font=("Calabri", 15),command=self.timerRun)
-        self.runTimer.grid(row=6,column=5)
+        self.runTimer.grid(row=6,column=3, columnspan=4,sticky="nsew")
         
         self.clockWindow.mainloop()# Run the window
     def displayDate(self):
