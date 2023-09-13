@@ -1,3 +1,5 @@
+# Instructions how to use in the README file
+
 import tkinter
 import datetime
 
@@ -25,12 +27,11 @@ class Clock():
         self.__timer="00:00"#Timer display
         self.__originalTimer="00:00"#Placeholder to keep users original timer value
         self.__timerComplete=False#The timer can only run if this variable is false
+        self.__timerPaused=False#  Variable to indicate if timer is paused or not 
 
         self.__alarmMessage=False#Variable to change message shown when alarm is activated to indicate urgency
-        self.__timerMessage=False#Variable to change message shown when timer is activated to indicate urgency
 
         self.__alarmSet=False #Set to true if an alarm has been set by the user to go off at a specific time
-        self.__timerReady=False#Set to true if user has inputted a time they want to count down from
 
         # Create a display to show the time/timer/date etc and display the time on it
         self.__mainDisplay=tkinter.Entry(self.__clockWindow, font=("Arial", 22), width=40,justify="center")
@@ -93,7 +94,7 @@ class Clock():
         self.__setTimer=tkinter.Button(self.__clockWindow,text="Set Timer", font=("Calabri", 15),command=self.__timerSet,relief="raised",bg="lightblue")
         self.__setTimer.grid(row=3,column=4,sticky="nsew")
         #Allows user to pause the timer
-        self.__pauseTimer=tkinter.Button(self.__clockWindow,text="Pause timer", font=("Calabri", 15),command=self.__timerPause,relief="raised",bg="lightblue")
+        self.__pauseTimer=tkinter.Button(self.__clockWindow,text="Pause/Resume timer", font=("Calabri", 15),command=self.__timerPause,relief="raised",bg="lightblue")
         self.__pauseTimer.grid(row=3,column=5,sticky="nsew")
         #Allows user to reset the timer
         self.__resetTimer=tkinter.Button(self.__clockWindow,text="Reset Timer", font=("Calabri", 15),command=self.__timerReset,relief="raised",bg="lightblue")
@@ -374,15 +375,22 @@ class Clock():
         Function which pauses the timer
         Stops by preventing timerRun from running
         '''
-        self.__timerComplete=True#By setting this to True the timer is paused until it is resumed
-
+        if self.__timerComplete==False: #if a timer is running
+            #If button is pressed when timer is running
+            if self.__timerPaused==False:
+                self.__timerPaused=True#Variable to indicate timer is paused
+                self.__updateDisplay(self.__timer+" Paused")#indicate timer is paused
+            #Unpause the time if pressed a second time
+            else:
+                self.__timerPaused=False
+                self.__updateDisplay(self.__timer)
+                
     def __timerRun(self):
         '''
         Function which starts the timer
         '''
-        if self.__setTimerScreen==False and self.__timerComplete==False and self.__timer!="00:00" :#If the user has set a time into the timer
-            self.__timerComplete=False#Allows the timer to be decremented every second when set to False
-            
+
+        if self.__setTimerScreen==False and self.__timerComplete==False and self.__timer!="00:00" and self.__timerPaused==False:#If the user has set a time into the timer
 
             newMinute =int(self.__timer[0:2])#Get the minutes left on the timer
 
